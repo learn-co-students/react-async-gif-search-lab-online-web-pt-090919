@@ -17,7 +17,6 @@ class GiftListContainer extends Component {
         } else {
           this.setState({gifs: []})
         }
-        console.log(this.state.gifs)
       })
   }
 

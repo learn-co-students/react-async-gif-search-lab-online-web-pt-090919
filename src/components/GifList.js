@@ -9,7 +9,7 @@ export default class GifList extends Component {
           {(this.props.gifs.length > 0) ? (
             this.props.gifs.map(gif => <li><img src={gif} /></li>)
           ) : (
-            <li>No gifs found</li>
+            <li>No gifs found.</li>
           )}
         </ul>
       </div>
