@@ -4,26 +4,30 @@ import React from 'react';
 export default class GifSearch extends React.Component{
 
     state = {
-        query: ""
+        search: ""
     }
 
-    handleChange = (e) => {
-        e.persist()
+    handleChange = (event) => {
+        event.persist()
         this.setState({
-            [e.target.id]: e.target.value 
+            [event.target.id]: event.target.value 
         })
     }
 
     handleSubmit = (e) => {
         e.preventDefault()
-        this.props.getGIFs(this.state.query)
+        this.props.fetchGIFs(this.state.search)
     }
 
     render() {
 
         return(
             <form onSubmit={event => this.handleSubmit(event)}>
-                <input type="text" id="query" value={this.state.query} onChange={this.handleChange}></input>
+                <input 
+                type="text" 
+                id="search" 
+                value={this.state.search} 
+                onChange={this.handleChange}></input>
                 <input type="submit"></input>
             </form>
         )
