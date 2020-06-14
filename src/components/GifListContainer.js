@@ -22,7 +22,7 @@ export default class GifListContainer extends Component {
           .then(response => response.json())
           .then(data => {
             this.setState({
-               gifs: data.data         
+               gifs: data.data.slice(0,3)        
             })
             console.log(this.state.gifs)
           })
